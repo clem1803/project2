@@ -1,0 +1,22 @@
+,ID,COUNTRY,WEAPON_NAME,WEAPON_CLASS,WEAPON_DESCRIPTION
+0,1,USA,10 Kg,HE,22 lb High capacity drop bomb.
+1,2,USA,10 kg incencdiaries,IC,Chanard 22 lb incendiary. 25.5 inches long and 4.7 inches in diameter.
+2,3,USA,115 mm ,HE,44.5 lb bomb. 46.5 inches long and 4.5 inches (115 mm) in diameter
+3,4,USA,115 mm demolition,HE,44.5 lb bomb. 46.5 inches long and 4.5 inches (115 mm) in diameter
+4,5,USA,115 mm Long,HE,44.5 lb bomb. 46.5 inches long and 4.5 inches (115 mm) in diameter
+5,6,USA,155 mm Demolition,HE,Similar to the 155 mm Penetration bomb. 6 inch diameter. Could be a high capacity Mark III.
+6,7,USA,155 mm Penetration,HE,88 lb bomb. 32.5 inches long and 6 inches (155 mm) in diameter.
+7,8,USA,20 Kg,HE,44 lb bomb
+8,9,USA,45 kilo bomb,HE,99 lb bomb
+9,10,USA,50 Kg,HE,110 lb bomb
+10,11,USA,8 kilo bombs,HE,17.6 lb bomb
+11,12,USA,90 mm,HE,24.7 lb 22 inch long and 3.5 inch diameter explosive bomb or 20.3 lb 24 inch long 3.5 inch diameter fragmentation bomb
+12,13,USA,90 mm incendiary,IC,3.5 inch diameter incendiary bomb
+13,14,USA,baby incendiaries,IC,6 oz. Baby incendiary bomb. 6 inches long and 1 inch in diameter.
+14,15,UK,112 lb bomb,HE,"""British Mk V,VI, and VII 112lb bomb"""
+15,16,Italy,260mm/162mm,HE,230 lb English or 225 lb U.S. Mark IV-A 10 inch diameter (260mm) / or 6.3 inch diameter (162mm) bomb
+16,17,Italy,60 lb bombs,HE,60 lb bomb
+17,18,Italy,frag bombs,Frag,Fragmentation bomb
+18,19,France,10 Kg,HE,22 lb bomb
+19,20,France,20 Kg,HE,44 lb bomb
+20,21,France,50 Kg,HE,110 lb bomb
