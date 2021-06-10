@@ -5,17 +5,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 import os
 
-
-connection_string = "postgres:mavourneen18@localhost:5432/project2"
-engine = create_engine(f'postgresql://{connection_string}')
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-WWI_aircraft_data = Base.classes
+from db import session, WWI_aircraft_data
 
 # Flask Setup
 app = Flask(__name__)
@@ -33,17 +23,14 @@ def welcome():
 @app.route("/api/v1.0/aircraft_data")
 def names():
     # Create our session (link) from Python to the DB
-    session = Session(engine)
+
 
     # Query all passengers
-    results = session.query(WWI_aircraft_data.AIRCRAFT).all()
+    results = session.query(WWI_aircraft_data).all()
+    print(len(results))
 
-    session.close()
 
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
-
-    return jsonify(all_names)
+    return jsonify(results)
 
 
 if __name__ == '__main__':
