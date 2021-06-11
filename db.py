@@ -1,4 +1,5 @@
 import sqlalchemy
+import pandas as pd
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, MetaData, Table, inspect
@@ -6,29 +7,19 @@ from sqlalchemy import create_engine, func, MetaData, Table, inspect
 
 
 connection_string = "postgres:mavourneen18@localhost:5432/project2"
-engine = create_engine(f'postgresql://{connection_string}')
+engine = create_engine('postgresql://postgres:mavourneen18@localhost:5432/project2')
 
-metadata = MetaData()
-metadata.reflect(bind=engine)
-print(metadata.tables)
+# Querying aircraft data
+# aircraft_query = "select * from wwi_aircraft_data"
+# aircraft_data = pd.read_sql(aircraft_query, engine)
+# print(aircraft_data)
 
-insp = inspect(engine)
-print(insp.get_table_names())
+# Querying aerial attack data
+# aerial_attack_query = "select * from wwi_aerial_attack"
+# aerial_attack_data = pd.read_sql(aerial_attack_query, engine)
+# print(aerial_attack_data)
 
-# reflect an existing database into a new model
-Base = automap_base(metadata=metadata)
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-# wwi_aircraft_data = Base.classes.wwi_aircraft_data
-print(Base.classes.__tablenames__)
-
-# messages = Table('wwi_aircraft_data', metadata, autoload_with=engine)
-
-# session = Session(engine)
-# results = session.query(wwi_aircraft_data).all()
-# print(len(results))
-
-
-# print (engine.table_names())
+# Querying weapon data
+# weapon_query = "select * from wwi_weapon_data"
+# weapon_data = pd.read_sql(weapon_query, engine)
+# print(weapon_data)
