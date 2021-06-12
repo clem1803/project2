@@ -15,22 +15,20 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 d3.json("WWI_aerial_attack_data.json").then(function(response) {
 
-  console.log(response);
-
-  var markers = [];
-
-  for (var i = 0; i < response.length; i++) {
-    var location = [response[i].LATITUDE, response[i].LONGITUDE];
-
-    if (location) {
-      markers.push(location);
+  var latitude = response.LATITUDE
+  var longitude = response.LONGITUDE
+    for(var i = 0;i < Object.keys(latitude).length; i++){
+      if(latitude[i]==null || longitude[i]==null){continue;}
+      var location = [latitude[i], longitude[i]];
+      console.log(location)
+      var dots = L.marker(location, {
+        draggable: true,
+        color: "#CE3211"
+      })
+      dots.addTo(myMap);
     }
-  }
 
-  var dots = L.marker(markers, {
-    // radius: 50,
-    // blur: 35
-  }).addTo(myMap);
+
 
 }).catch(function(error) {
     console.log(error);
