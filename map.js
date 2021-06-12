@@ -13,23 +13,23 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 
-d3.json("/api/v1.0/aerial_attack").then(function(response) {
+d3.json("WWI_aerial_attack_data.json").then(function(response) {
 
   console.log(response);
 
-  var marker = [];
+  var markers = [];
 
   for (var i = 0; i < response.length; i++) {
     var location = [response[i].LATITUDE, response[i].LONGITUDE];
 
     if (location) {
-      heatArray.push(location);
+      markers.push(location);
     }
   }
 
-  var heat = L.heatLayer(heatArray, {
-    radius: 50,
-    blur: 35
+  var dots = L.marker(markers, {
+    // radius: 50,
+    // blur: 35
   }).addTo(myMap);
 
 }).catch(function(error) {

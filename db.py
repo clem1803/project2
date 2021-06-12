@@ -6,8 +6,8 @@ from sqlalchemy import create_engine, func, MetaData, Table, inspect
 
 
 
-connection_string = "postgres:mavourneen18@localhost:5432/project2"
-engine = create_engine('postgresql://postgres:mavourneen18@localhost:5432/project2')
+connection_string = "postgres:bluey786@localhost:5432/project2"
+engine = create_engine('postgresql://postgres:bluey786@localhost:5432/project2')
 
 # Querying aircraft data
 # aircraft_query = "select * from wwi_aircraft_data"
