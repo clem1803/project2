@@ -1,6 +1,6 @@
 var myMap = L.map("map", {
-  center: [39.8283, -98.5795],
-  zoom: 4
+  center: [47.1410, 9.5209],
+  zoom: 5
 });
 
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -17,18 +17,23 @@ d3.json("WWI_aerial_attack_data.json").then(function(response) {
 
   var latitude = response.LATITUDE
   var longitude = response.LONGITUDE
-    for(var i = 0;i < Object.keys(latitude).length; i++){
+  var locationName = response.TGTLOCATION
+  var attackDate = response.MSNDATE
+    for(var i = 0;i < Object.keys(latitude, locationName, attackDate).length; i++){
       if(latitude[i]==null || longitude[i]==null){continue;}
       var location = [latitude[i], longitude[i]];
-      console.log(location)
+      var tgtloc = locationName[i];
+      var msnDate = attackDate[i];
+      console.log(locationName, latitude)
       var dots = L.marker(location, {
         draggable: true,
+        title: tgtloc,
         color: "#CE3211"
-      })
+      }).bindPopup("<h3>" + tgtloc + "</h3><hr><p>" + msnDate + "</p>");
       dots.addTo(myMap);
     }
 
-
+    
 
 }).catch(function(error) {
     console.log(error);
