@@ -1,4 +1,4 @@
-var myMap = L.map("map", {
+var myMap2 = L.map("map2", {
   center: [47.1410, 9.5209],
   zoom: 5
 });
@@ -10,14 +10,14 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1,
   id: "mapbox/streets-v11",
   accessToken: "pk.eyJ1IjoiY2xlbTE4MDMiLCJhIjoiY2twNGszc25vMjFmdDJ1cXdjZzFuMTNvMSJ9.Z9LOJ7Q_Z18Srpymu_xqEw"
-}).addTo(myMap);
+}).addTo(myMap2);
 
 
 d3.json("WWII_aerial_attack_data.json").then(function(response) {
 
   var latitude = response.LATITUDE
   var longitude = response.LONGITUDE
-  var locationName = response.TGTLOCATION
+  var locationName = response.TGT_LOCATION
   var attackDate = response.MSNDATE
     for(var i = 0;i < Object.keys(latitude, locationName, attackDate).length; i++){
       if(latitude[i]==null || longitude[i]==null){continue;}
@@ -30,7 +30,7 @@ d3.json("WWII_aerial_attack_data.json").then(function(response) {
         title: tgtloc,
         color: "#CE3211"
       }).bindPopup("<h3>" + tgtloc + "</h3><hr><p>" + msnDate + "</p>");
-      dots.addTo(myMap);
+      dots.addTo(myMap2);
     }
 
 
