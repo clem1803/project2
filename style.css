@@ -1,1 +1,12 @@
 #map, body, html, #map2 {height: 400px; width: 100%;}
+
+body {
+    background-color: #e9e9e9;
+}
+h3{
+  color: #106e85;
+}
+h3
+{
+  text-align: center;
+}
