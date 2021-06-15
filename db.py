@@ -23,3 +23,8 @@ engine = create_engine('postgresql://postgres:bluey786@localhost:5432/project2')
 # weapon_query = "select * from wwi_weapon_data"
 # weapon_data = pd.read_sql(weapon_query, engine)
 # print(weapon_data)
+
+# Querying aerial attack ii data
+# aerial_attack_query = "select * from wwii_aerial_attack_data"
+# aerial_attack_data = pd.read_sql(aerial_attack_query, engine)
+# print(aerial_attack_data)

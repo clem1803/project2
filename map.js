@@ -33,7 +33,7 @@ d3.json("WWI_aerial_attack_data.json").then(function(response) {
       dots.addTo(myMap);
     }
 
-    
+
 
 }).catch(function(error) {
     console.log(error);

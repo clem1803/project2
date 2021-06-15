@@ -47,5 +47,11 @@ def waepon_data():
 #with open('weapon_data.json', 'w') as f:
     #json.dump(data, f)
 
+@app.route("/api/v1.0/aerial_attack")
+def aircraft_attack_ii():
+    aerial_attack_query = "select * from wwii_aerial_attack_data"
+    aerial_attack_data = pd.read_sql(aerial_attack_query, engine)
+    return aerial_attack_data.to_json(orient="records")
+
 if __name__ == '__main__':
     app.run(debug=True)
